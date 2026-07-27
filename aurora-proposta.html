@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Proposta — Loja do Residencial Aurora | SmartStore</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Manrope:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FFF8EE;
+    --cream-2:#FBEFDA;
+    --ink:#241F19;
+    --ink-soft:#6B6055;
+    --line:#E9DAC1;
+    --orange:#F2701C;
+    --orange-deep:#C94E12;
+    --orange-bg:#FDEBDC;
+    --green:#3D7A34;
+    --green-deep:#295522;
+    --green-bg:#E9F2E4;
+    --white:#FFFFFF;
+  }
+  *,*::before,*::after{box-sizing:border-box;min-width:0;}
+  html{-webkit-text-size-adjust:100%;text-size-adjust:100%;}
+  html,body{max-width:100%;overflow-x:hidden;}
+  body{
+    margin:0;background:var(--cream);color:var(--ink);
+    font-family:'Manrope',sans-serif;
+    -webkit-font-smoothing:antialiased;
+    line-height:1.55;
+    width:100%;
+  }
+  h1,h2,h3,.display{font-family:'Sora',sans-serif;font-weight:700;letter-spacing:-0.01em;margin:0;overflow-wrap:break-word;}
+  .mono{font-family:'Space Mono',monospace;}
+  p{color:var(--ink-soft);margin:0 0 1em;overflow-wrap:break-word;}
+  a{color:inherit;}
+  img{max-width:100%;height:auto;display:block;}
+  .wrap{width:100%;max-width:1040px;margin:0 auto;padding:0 20px;}
+  .label{
+    font-family:'Space Mono',monospace;font-size:.68rem;
+    text-transform:uppercase;letter-spacing:.1em;
+    color:var(--orange-deep);font-weight:700;
+  }
+  :focus-visible{outline:3px solid var(--orange);outline-offset:2px;}
+
+  /* ===== HEADER ===== */
+  header{padding:14px 0;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--cream);z-index:50;}
+  header .wrap{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:nowrap;}
+  .brand{font-family:'Sora',sans-serif;font-size:1.15rem;font-weight:800;flex-shrink:0;}
+  .brand .smart{color:var(--green-deep);}
+  .brand .store{background:linear-gradient(92deg,var(--orange) 10%,var(--orange-deep) 90%);-webkit-background-clip:text;background-clip:text;color:transparent;}
+  .brand small{display:block;font-family:'Manrope',sans-serif;font-weight:600;font-size:.56rem;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-soft);margin-top:1px;}
+  header .doc-meta{font-family:'Space Mono',monospace;font-size:.68rem;color:var(--ink-soft);text-align:right;line-height:1.3;display:none;flex-shrink:1;}
+  @media(min-width:520px){header .doc-meta{display:block;}}
+
+  /* ===== HERO ===== */
+  .hero{position:relative;display:flex;align-items:flex-end;background:#14110D;width:100%;}
+  .hero-media{position:relative;width:100%;padding-top:118%;}
+  .hero-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 65%;opacity:.6;}
+  .hero-media::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(0deg, rgba(16,13,9,.97) 12%, rgba(20,15,10,.68) 55%, rgba(36,20,8,.22) 100%);
+  }
+  .hero-inner{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:28px 0 32px;color:#fff;}
+  .hero .eyebrow{color:#FFC896;display:inline-flex;align-items:center;gap:8px;}
+  .hero .eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--orange);flex-shrink:0;}
+  .hero h1{font-size:1.65rem;line-height:1.16;margin:12px 0 14px;}
+  .hero h1 em{font-style:normal;color:#FFB27A;}
+  .hero p{max-width:52ch;color:#EFE4D3;font-size:.96rem;margin-bottom:22px;}
+  .hero-ctas{display:flex;flex-wrap:wrap;gap:10px;}
+  .hero-ctas .btn{width:100%;}
+  @media(min-width:480px){.hero-ctas .btn{width:auto;}}
+
+  @media(min-width:640px){
+    .hero-media{padding-top:62%;}
+    .hero h1{font-size:2.1rem;max-width:16ch;}
+    .hero-inner{padding:40px 0 40px;}
+  }
+  @media(min-width:900px){
+    .hero-media{padding-top:48%;}
+    .hero h1{font-size:2.6rem;}
+    .hero-inner{padding:52px 0 48px;}
+    .hero p{font-size:1.05rem;}
+  }
+
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    padding:14px 22px;border-radius:8px;
+    font-weight:700;font-size:.9rem;text-decoration:none;
+    border:1.5px solid transparent;font-family:'Manrope',sans-serif;
+  }
+  .btn-primary{background:var(--orange);color:#fff;}
+  .btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.4);}
+
+  section{padding:40px 0;border-bottom:1px solid var(--line);}
+  @media(min-width:640px){section{padding:56px 0;}}
+  @media(min-width:900px){section{padding:68px 0;}}
+  section:last-of-type{border-bottom:none;}
+  .section-head{max-width:640px;margin-bottom:22px;}
+  .section-head h2{font-size:1.32rem;margin-top:10px;line-height:1.24;}
+  .section-head p{margin-top:10px;font-size:.94rem;}
+  @media(min-width:640px){
+    .section-head{margin-bottom:30px;}
+    .section-head h2{font-size:1.55rem;}
+    .section-head p{font-size:1rem;}
+  }
+
+  /* ===== PRICE BANNER ===== */
+  .price-banner{
+    background:var(--green-bg);
+    border:1px solid #D3E3CB;
+    border-left:5px solid var(--green);
+    border-radius:0 10px 10px 0;
+    padding:20px;
+    display:flex;flex-direction:column;gap:14px;
+  }
+  .price-banner .tag{
+    font-family:'Space Mono',monospace;font-size:.62rem;text-transform:uppercase;
+    letter-spacing:.08em;color:var(--green-deep);font-weight:700;
+    background:#fff;border:1px solid #D3E3CB;border-radius:100px;
+    padding:6px 12px;white-space:nowrap;width:fit-content;
+  }
+  .price-banner h2{font-size:1.14rem;margin-bottom:8px;}
+  .price-banner p{margin:0;color:#3F5138;font-size:.92rem;}
+  @media(min-width:640px){
+    .price-banner{flex-direction:row;align-items:flex-start;padding:28px 30px;gap:22px;}
+    .price-banner h2{font-size:1.3rem;}
+    .price-banner p{font-size:.96rem;}
+  }
+
+  /* ===== SIZE UPGRADE (signature) ===== */
+  .upsize{background:linear-gradient(180deg,#1C1712 0%,#241C13 100%);border-bottom:none;color:#fff;}
+  .upsize .section-head h2{color:#fff;}
+  .upsize .section-head p{color:#D8CBB6;}
+  .upsize .label{color:#FFB27A;}
+  .compare{display:flex;flex-direction:column;align-items:center;gap:14px;margin-top:10px;}
+  .compare-arrow{display:flex;align-items:center;justify-content:center;color:#FFB27A;transform:rotate(90deg);}
+  .compare-arrow svg{width:30px;height:30px;}
+  .compare-col{display:flex;flex-direction:column;align-items:center;gap:12px;width:100%;max-width:260px;}
+  .compare-label{font-family:'Space Mono',monospace;font-size:.66rem;text-transform:uppercase;letter-spacing:.08em;color:#B9AC97;}
+  .compare-box{width:100%;background:rgba(255,255,255,.04);border:1.5px dashed rgba(255,255,255,.25);border-radius:12px;display:flex;align-items:flex-end;justify-content:center;overflow:hidden;}
+  .compare-box .fill{width:78%;border-radius:8px 8px 0 0;display:flex;align-items:flex-start;justify-content:center;padding-top:10px;font-family:'Space Mono',monospace;font-size:.68rem;font-weight:700;color:#fff;text-align:center;}
+  .box-now{height:90px;}
+  .box-now .fill{height:68%;background:linear-gradient(180deg,#5a5148,#3a352e);}
+  .box-next{height:150px;}
+  .box-next .fill{height:92%;background:linear-gradient(180deg,var(--orange),var(--orange-deep));}
+  .compare-name{font-family:'Sora',sans-serif;font-weight:700;font-size:.98rem;}
+  .compare-desc{font-size:.8rem;color:#C7BAA5;text-align:center;margin:0;}
+  .upsize-note{margin-top:26px;padding-top:20px;border-top:1px solid rgba(255,255,255,.12);font-size:.9rem;color:#E3D8C5;}
+  .upsize-note strong{color:#FFB27A;}
+
+  @media(min-width:640px){
+    .compare{flex-direction:row;justify-content:center;align-items:flex-end;gap:24px;}
+    .compare-arrow{transform:none;}
+    .upsize-note{max-width:64ch;}
+  }
+
+  /* ===== IMPROVEMENTS ===== */
+  .props{counter-reset:p;}
+  .prop{display:flex;gap:14px;padding:18px 0;border-top:1px solid var(--line);}
+  .prop:first-child{border-top:none;}
+  .prop .n{flex-shrink:0;width:40px;font-family:'Sora',sans-serif;font-size:1.2rem;font-weight:800;color:var(--orange);}
+  .prop.highlight .n{color:var(--green-deep);}
+  .prop .body{flex:1;min-width:0;}
+  .prop h3{font-size:1rem;margin-bottom:5px;}
+  .prop p{margin:0;font-size:.92rem;}
+  .prop .chip{display:inline-block;margin-top:8px;font-family:'Space Mono',monospace;font-size:.62rem;text-transform:uppercase;letter-spacing:.05em;background:var(--green-bg);color:var(--green-deep);padding:4px 9px;border-radius:100px;}
+  @media(min-width:640px){
+    .prop{gap:18px;padding:20px 0;}
+    .prop .n{width:44px;font-size:1.3rem;}
+    .prop h3{font-size:1.08rem;}
+    .prop p{font-size:.94rem;}
+  }
+
+  /* ===== RENDER GALLERY ===== */
+  .render-lead{margin-bottom:20px;}
+  .render-gallery{display:flex;flex-direction:column;gap:14px;}
+  .render-gallery figure{margin:0;position:relative;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:#111;width:100%;}
+  .render-gallery .ph{position:relative;width:100%;padding-top:75%;}
+  .r-main .ph{padding-top:80%;}
+  .render-gallery img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+  figure figcaption{
+    position:absolute;left:0;right:0;bottom:0;
+    padding:14px 16px 12px;
+    background:linear-gradient(0deg,rgba(10,8,5,.85),rgba(10,8,5,0));
+    color:#fff;font-size:.8rem;font-weight:600;
+  }
+  figcaption span{display:block;font-family:'Space Mono',monospace;font-weight:400;font-size:.64rem;color:#E3B98C;text-transform:uppercase;letter-spacing:.05em;margin-bottom:2px;}
+  .render-note{margin-top:16px;font-size:.85rem;color:var(--ink-soft);}
+
+  @media(min-width:680px){
+    .render-gallery{display:grid;grid-template-columns:1.3fr 1fr;grid-auto-rows:1fr;gap:14px;}
+    .r-main{grid-row:1 / 3;}
+    .r-main .ph{padding-top:105%;height:100%;}
+    .r-sub .ph{padding-top:64%;}
+  }
+
+  /* ===== TERMS ===== */
+  .terms{background:var(--cream-2);}
+  .terms-flex{display:flex;flex-direction:column;gap:28px;}
+  .terms-copy p{font-size:.96rem;}
+  .receipt{background:#fff;border:1px solid var(--line);border-radius:10px;padding:22px 20px 18px;width:100%;}
+  .receipt-title{
+    font-family:'Space Mono',monospace;font-size:.66rem;letter-spacing:.08em;
+    color:var(--ink-soft);text-transform:uppercase;
+    border-bottom:1px dashed var(--line);padding-bottom:14px;margin-bottom:14px;
+  }
+  .r-line{display:flex;justify-content:space-between;gap:10px;font-family:'Space Mono',monospace;font-size:.76rem;padding:7px 0;flex-wrap:wrap;}
+  .r-line span:first-child{color:var(--ink-soft);}
+  .r-line.mark span:last-child{color:var(--green-deep);font-weight:700;}
+  .r-total{
+    display:flex;justify-content:space-between;gap:10px;font-family:'Space Mono',monospace;font-weight:700;font-size:.84rem;
+    border-top:1px dashed var(--line);margin-top:10px;padding-top:12px;flex-wrap:wrap;
+  }
+  .r-total span:last-child{color:var(--green-deep);}
+  @media(min-width:760px){
+    .terms-flex{flex-direction:row;align-items:flex-start;gap:44px;}
+    .terms-copy{flex:1.1;min-width:0;}
+    .receipt{flex:.9;}
+  }
+
+  /* ===== CLOSING ===== */
+  .closing h2{font-size:1.32rem;}
+  .closing p{max-width:52ch;font-size:.98rem;margin-top:14px;margin-bottom:22px;}
+  .closing-card{background:linear-gradient(135deg,var(--orange-bg),var(--green-bg));border-radius:14px;padding:26px 22px;border:1px solid var(--line);}
+  .closing .btn{width:100%;}
+  @media(min-width:520px){
+    .closing .btn{width:auto;}
+    .closing-card{padding:36px;}
+    .closing h2{font-size:1.55rem;max-width:22ch;}
+  }
+
+  footer{padding:26px 0;}
+  footer .wrap{display:flex;flex-direction:column;gap:6px;font-size:.76rem;color:var(--ink-soft);}
+  @media(min-width:520px){footer .wrap{flex-direction:row;justify-content:space-between;}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="brand"><span class="smart">Smart</span><span class="store">Store</span><small>Simplificando vidas</small></div>
+    <div class="doc-meta">Proposta de melhoria<br>Residencial Aurora</div>
+  </div>
+</header>
+
+<section class="hero" style="border-bottom:none;padding:0;">
+  <div class="hero-media">
+    <img src="img/foto13d.jpeg" alt="Render 3D da nova loja SmartStore proposta para o Residencial Aurora">
+  </div>
+  <div class="hero-inner">
+    <div class="wrap">
+      <span class="label eyebrow">Proposta de melhoria</span>
+      <h1>Trocar o minimercado atual por uma loja <em>maior</em>, completa e 24h.</h1>
+      <p>O Aurora já tem um mercado próprio dentro do condomínio. Esta proposta é para substituí-lo por uma loja SmartStore de autoatendimento — bem maior que a estrutura de hoje, com preços mais alinhados ao mercado da região, mais produtos e mais retorno para o caixa do condomínio.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="https://wa.me/5516996318704?text=Ol%C3%A1%2C%20Maria%20Eduarda!%20Vi%20a%20proposta%20de%20melhoria%20para%20a%20loja%20do%20Aurora%20e%20queria%20falar%20sobre%20isso." target="_blank" rel="noopener">Falar com a representante (Maria Eduarda)</a>
+        <a class="btn btn-ghost" href="#proposta">Ver a proposta completa</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="price-banner">
+      <span class="tag">Destaque da proposta</span>
+      <div>
+        <h2>Preços mais alinhados ao mercado da região</h2>
+        <p>Um dos pontos centrais da proposta é rever a precificação dos itens de maior saída, aproximando os valores da loja aos praticados em mercados fora do condomínio — sem abrir mão da comodidade de comprar em casa, a qualquer hora.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="upsize">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="label">O que muda de tamanho</span>
+      <h2>Sai o minimercado pequeno, entra uma loja completa</h2>
+      <p>Este é o coração da proposta: a estrutura atual dá lugar a uma loja bem maior, com espaço para muito mais equipamento e variedade — no mesmo local, sem custo para o condomínio.</p>
+    </div>
+    <div class="compare">
+      <div class="compare-col">
+        <span class="compare-label">Hoje</span>
+        <div class="compare-box box-now"><div class="fill">Minimercado</div></div>
+        <div class="compare-name">Estrutura atual</div>
+        <p class="compare-desc">Espaço pequeno, poucas geladeiras, mix de produtos limitado.</p>
+      </div>
+      <div class="compare-arrow">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </div>
+      <div class="compare-col">
+        <span class="compare-label">Proposta</span>
+        <div class="compare-box box-next"><div class="fill">Loja SmartStore</div></div>
+        <div class="compare-name">Loja ampliada</div>
+        <p class="compare-desc">Muito mais espaço: mais prateleiras, freezers e geladeiras, cabendo bem mais produtos.</p>
+      </div>
+    </div>
+    <div class="upsize-note">
+      <strong>Na prática:</strong> a loja proposta ocupa uma área maior que a atual, o suficiente para dobrar a quantidade de equipamentos de refrigeração e ampliar o mix de produtos sem virar bagunça — do básico do dia a dia a itens mais específicos.
+    </div>
+  </div>
+</section>
+
+<section id="proposta">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="label">O que a proposta traz</span>
+      <h2>Cinco mudanças propostas para a loja</h2>
+      <p>Nesta ordem de prioridade.</p>
+    </div>
+    <div class="props">
+      <div class="prop">
+        <div class="n">01</div>
+        <div class="body"><h3>Preços mais alinhados ao mercado</h3><p>Revisão da precificação dos itens de maior saída na loja.</p></div>
+      </div>
+      <div class="prop">
+        <div class="n">02</div>
+        <div class="body"><h3>Mais produtos, mais variedade</h3><p>Ampliação do mix de itens à venda, para atender melhor o dia a dia de todo mundo — do básico ao mais específico.</p></div>
+      </div>
+      <div class="prop highlight">
+        <div class="n">03</div>
+        <div class="body"><h3>Loja maior, com mais equipamentos</h3><p>Estrutura ampliada, com mais prateleiras, freezers e geladeiras, para caber mais produtos sem virar bagunça.</p><span class="chip">Mudança de tamanho ↑</span></div>
+      </div>
+      <div class="prop">
+        <div class="n">04</div>
+        <div class="body"><h3>Mais retorno para o condomínio</h3><p>Percentual de repasse mensal da loja para o caixa do Aurora — ajudando a segurar a taxa condominial e reforçar o fundo de reserva, sem custo para os moradores.</p></div>
+      </div>
+      <div class="prop">
+        <div class="n">05</div>
+        <div class="body"><h3>Contrato formalizado</h3><p>Termos da parceria registrados por escrito entre a operadora e o condomínio, com regras claras desde o início.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head render-lead">
+      <span class="label">Como ficaria</span>
+      <h2>Projeto 3D da loja proposta para o Aurora</h2>
+      <p>Simulação da loja maior, no mesmo espaço hoje ocupado pelo minimercado do condomínio — já no formato de autoatendimento 24h, sem operador.</p>
+    </div>
+    <div class="render-gallery">
+      <figure class="r-main">
+        <div class="ph"><img src="img/foto13d.jpeg" alt="Vista frontal do render 3D da loja SmartStore proposta"></div>
+        <figcaption><span>Vista frontal</span>Entrada, totem de autoatendimento e sinalização</figcaption>
+      </figure>
+      <figure class="r-sub">
+        <div class="ph"><img src="img/parte-frontal.jpeg" alt="Fachada da loja SmartStore integrada ao prédio existente"></div>
+        <figcaption><span>Fachada integrada</span>Encaixe da loja junto ao prédio do Aurora</figcaption>
+      </figure>
+      <figure class="r-sub">
+        <div class="ph"><img src="img/outroangulo.jpeg" alt="Vista lateral do container da loja SmartStore, com detalhe do acabamento"></div>
+        <figcaption><span>Detalhe lateral</span>Acabamento do container e identidade visual</figcaption>
+      </figure>
+    </div>
+    <p class="render-note">Projeto de referência para o Residencial Aurora — Av. Gov. Orestes Quércia, 1201.</p>
+  </div>
+</section>
+
+<section class="terms">
+  <div class="wrap">
+    <div class="terms-flex">
+      <div class="terms-copy">
+        <span class="label">Resumindo</span>
+        <h2 style="margin-top:10px;font-size:1.2rem;">O que muda e o que continua, na proposta</h2>
+        <p>A ideia é manter a energia elétrica da loja 100% por conta da operadora, sem custo para o condomínio. O que a proposta muda é a precificação, o tamanho da loja, a variedade de produtos e o valor de repasse mensal ao caixa do condomínio.</p>
+      </div>
+      <div class="receipt mono">
+        <div class="receipt-title">Resumo da proposta</div>
+        <div class="r-line mark"><span>Tamanho da loja</span><span>ampliação proposta</span></div>
+        <div class="r-line mark"><span>Preços</span><span>revisão proposta</span></div>
+        <div class="r-line"><span>Energia elétrica</span><span>100% operadora</span></div>
+        <div class="r-line"><span>Reposição</span><span>diária</span></div>
+        <div class="r-line"><span>Limpeza do espaço</span><span>diária</span></div>
+        <div class="r-line"><span>Equipamentos</span><span>ampliação proposta</span></div>
+        <div class="r-line"><span>Variedade de produtos</span><span>ampliação proposta</span></div>
+        <div class="r-total"><span>Investimento do condomínio</span><span>R$ 0,00</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="closing">
+  <div class="wrap">
+    <div class="closing-card">
+      <span class="label">Fala com a gente</span>
+      <h2 style="margin-top:10px;">Essa é a proposta de melhoria para a loja do Aurora.</h2>
+      <p>Dúvidas, sugestões ou interesse em entender melhor os próximos passos: fica à vontade para chamar no WhatsApp.</p>
+      <a class="btn btn-primary" href="https://wa.me/5516996318704?text=Ol%C3%A1%2C%20Maria%20Eduarda!%20Vi%20a%20proposta%20de%20melhoria%20para%20a%20loja%20do%20Aurora%20e%20queria%20falar%20sobre%20isso." target="_blank" rel="noopener">Falar com a Representante (Maria Eduarda)</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>SmartStore — proposta para o Residencial Aurora</div>
+    <div>Av. Gov. Orestes Quércia, 1201, Araraquara/SP</div>
+  </div>
+</footer>
+
+</body>
+</html>
